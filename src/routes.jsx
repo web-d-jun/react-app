@@ -4,6 +4,14 @@ const routes = [
   {
     path: "/",
     element: <Layout />,
+    children: [
+      // { index: true, element: <Home /> },
+      // {
+      //   path: "/main",
+      //   element: <Courses />,
+      // },
+      { path: "*", element: <NoMatch /> },
+    ],
   },
   { path: "*", element: <NoMatch /> },
 ];
