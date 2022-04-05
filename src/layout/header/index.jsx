@@ -24,7 +24,7 @@ const Header = () => {
           {menus.map((item) => (
             <div
               key={item.name}
-              className={`navigation-button ${item.selected ? "test" : ""}`}
+              className={`navigation-button ${item.selected ? "selected" : 'not-selected'}`}
               role="button"
               onClick={() => goRouter(item)}
             >

@@ -9,7 +9,10 @@
     font-weight: bold;
   }
   .navigation-button {
-   font-size: 1.5rem;
-   margin: 3rem;
+    font-size: 1.5rem;
+    margin: 3rem;
+    &.selected {
+      color: #3f7be7;
+    }
   }
 }
