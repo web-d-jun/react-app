@@ -1,11 +1,12 @@
 import Layout from "./pages/layout";
 import { Link } from "react-router-dom";
+import MainPage from './pages/main'
 const routes = [
   {
     path: "/",
     element: <Layout />,
     children: [
-      // { index: true, element: <Home /> },
+      { index: true, element: <MainPage /> },
       // {
       //   path: "/main",
       //   element: <Courses />,
