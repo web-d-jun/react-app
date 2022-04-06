@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .header-wrap {
   width: 100%;
   max-width: 80%;
@@ -16,3 +17,20 @@
     }
   }
 }
+=======
+.header-wrap {
+  width: 100%;
+  max-width: 80%;
+  height: 70px;
+  background-color: #fff;
+  margin: auto;
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  .navigation-button {
+   font-size: 1.5rem;
+   margin: 3rem;
+  }
+}
+>>>>>>> 978848e768c37b2b5a671325c4069ec92eb627a1
