@@ -21,4 +21,9 @@ export default defineConfig({
       "component": path.resolve(__dirname, "./src/components"),
     },
   },
+  server: {
+    watch: {
+      usePolling: true
+    }
+  }
 });
