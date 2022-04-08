@@ -1,7 +1,10 @@
 .header-wrap {
+  padding: 1.3rem 0;
+}
+.header {
   width: 100%;
   max-width: 80%;
-  height: 70px;
+  height: 50px;
   background-color: #fff;
   margin: auto;
   .logo {
@@ -10,24 +13,9 @@
   }
   .navigation-button {
     font-size: 1.5rem;
-    margin: 3rem;
+    margin: 0 3rem;
     &.selected {
       color: #3f7be7;
     }
-  }
-}
-.header-wrap {
-  width: 100%;
-  max-width: 80%;
-  height: 70px;
-  background-color: #fff;
-  margin: auto;
-  .logo {
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  .navigation-button {
-   font-size: 1.5rem;
-   margin: 3rem;
   }
 }
