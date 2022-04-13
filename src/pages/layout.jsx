@@ -8,7 +8,9 @@ const SubMenu = ({ subMenu }) => {
   return (
     <div className="sub-menu-container flex justify-center items-center">
       {subMenu.map((item) => (
-        <div role="button" className="sub-menu" key={item.name}>{item.name}</div>
+        <div role="button" className="sub-menu" key={item.name}>
+          {item.name}
+        </div>
       ))}
     </div>
   );
@@ -19,9 +21,9 @@ SubMenu.propTypes = {
 };
 function Layout() {
   const [subMenu, setSubMenu] = React.useState([]);
-  const handleMenuChange = (menu) => {
+  const handleMenuChange = React.useCallback((menu) => {
     setSubMenu([...menu]);
-  };
+  }, [subMenu]);
   return (
     <div>
       <Header onMenuChange={handleMenuChange} />

@@ -12,7 +12,6 @@ const Header = ({ onMenuChange }) => {
   }, [navigate]);
   const menuRouterInit = () => {
     menus.map((x) => (x.selected = false));
-    onMenuChange([])
   }
   const goRouter = (item) => {
     menuRouterInit();
@@ -24,6 +23,7 @@ const Header = ({ onMenuChange }) => {
   };
   const mainRouter = () => {
     menuRouterInit();
+    onMenuChange([])
     navigate('/');
   }
   return (
