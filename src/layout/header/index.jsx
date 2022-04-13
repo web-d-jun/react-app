@@ -10,18 +10,26 @@ const Header = ({ onMenuChange }) => {
   useEffect(() => {
     console.log("this navigate effect");
   }, [navigate]);
-  const goRouter = (item) => {
+  const menuRouterInit = () => {
     menus.map((x) => (x.selected = false));
+    onMenuChange([])
+  }
+  const goRouter = (item) => {
+    menuRouterInit();
     const findIndex = menus.findIndex((x) => x.id === item.id);
     menus[findIndex].selected = true;
     setMenus([...menus]);
     onMenuChange(menus[findIndex].subMenu)
     navigate(item.location);
   };
+  const mainRouter = () => {
+    menuRouterInit();
+    navigate('/');
+  }
   return (
     <div className="header-wrap">
       <div className="header flex items-center justify-center">
-        <div className="logo">AccuRator</div>
+        <div role="button" className="logo" onClick={mainRouter}>AccuRator</div>
         <div className="flex flex-1 justify-center">
           {menus.map((item) => (
             <div
