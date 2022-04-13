@@ -6,9 +6,9 @@ import "./layout.scss";
 
 const SubMenu = ({ subMenu }) => {
   return (
-    <div className="sub-menu-container">
+    <div className="sub-menu-container flex justify-center items-center">
       {subMenu.map((item) => (
-        <div key={item.name}>{item.name}</div>
+        <div role="button" className="sub-menu" key={item.name}>{item.name}</div>
       ))}
     </div>
   );
