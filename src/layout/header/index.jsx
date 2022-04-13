@@ -3,7 +3,8 @@ import Button from "component/button";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import menuItems from "./menu";
-const Header = () => {
+import { PropTypes } from "prop-types";
+const Header = ({ onMenuChange }) => {
   const navigate = useNavigate();
   const [menus, setMenus] = useState(menuItems);
   useEffect(() => {
@@ -14,6 +15,7 @@ const Header = () => {
     const findIndex = menus.findIndex((x) => x.id === item.id);
     menus[findIndex].selected = true;
     setMenus([...menus]);
+    onMenuChange(menus[findIndex].subMenu)
     navigate(item.location);
   };
   return (
@@ -24,7 +26,9 @@ const Header = () => {
           {menus.map((item) => (
             <div
               key={item.name}
-              className={`navigation-button ${item.selected ? "selected" : 'not-selected'}`}
+              className={`navigation-button ${
+                item.selected ? "selected" : "not-selected"
+              }`}
               role="button"
               onClick={() => goRouter(item)}
             >
@@ -42,4 +46,7 @@ const Header = () => {
   );
 };
 
+Header.propTypes = {
+  onMenuChange: PropTypes.func
+}
 export default Header;
