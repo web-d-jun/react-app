@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import "./index.scss";
 const MainPage = () => {
-    return (
-        <div>main....dsa1111222111</div>
-    )
+  return (
+    <div className="main-container">
+      <div>main...</div>
+    </div>
+  );
 };
 export default MainPage;
