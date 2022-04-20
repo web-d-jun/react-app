@@ -25,6 +25,14 @@ const MainContainer = styled.div`
   }
 `;
 
+const StyledButton = styled.button`
+  
+`
+
+const Button = () => {
+  return <StyledButton>button</StyledButton>
+}
+
 const MainPage = () => {
   return (
     <MainContainer className="flex flex-col">
@@ -37,6 +45,15 @@ const MainPage = () => {
               AccuRator
             </span>
           </div>
+          <div className="desc">
+            원하는 데이터의 중계,융합,유통부터 전문가들을 통한
+            <br />
+            Professional Service와 Platform Service까지
+            <br />
+            고객의 비지니스를 위한 데이터의 모든 것을 제공합니다.
+          </div>
+          <Button></Button>
+          <Button></Button>
         </div>
         <div className="box-2">
           <img className="chart-image" src={imageUrl.mainChartImg} alt="" />
