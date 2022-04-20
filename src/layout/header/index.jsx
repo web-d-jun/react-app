@@ -4,6 +4,14 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import menuItems from "./menu";
 import { PropTypes } from "prop-types";
+import styled from "styled-components";
+
+const NaviButton = styled.div`
+  font-size: 1.5rem;
+  margin: 0 3rem;
+  color: ${(props) => (props.selected ? "#3f7be7" : "#000")};
+`;
+
 const Header = ({ onMenuChange }) => {
   const navigate = useNavigate();
   const [menus, setMenus] = useState(menuItems);
@@ -12,36 +20,37 @@ const Header = ({ onMenuChange }) => {
   }, [navigate]);
   const menuRouterInit = () => {
     menus.map((x) => (x.selected = false));
-  }
+  };
   const goRouter = (item) => {
     menuRouterInit();
     const findIndex = menus.findIndex((x) => x.id === item.id);
     menus[findIndex].selected = true;
     setMenus([...menus]);
-    onMenuChange(menus[findIndex].subMenu)
+    onMenuChange(menus[findIndex].subMenu);
     navigate(item.location);
   };
   const mainRouter = () => {
     menuRouterInit();
-    onMenuChange([])
-    navigate('/');
-  }
+    onMenuChange([]);
+    navigate("/");
+  };
+
   return (
     <div className="header-wrap">
       <div className="header flex items-center justify-center">
-        <div role="button" className="logo" onClick={mainRouter}>AccuRator</div>
+        <div role="button" className="logo" onClick={mainRouter}>
+          AccuRator
+        </div>
         <div className="flex flex-1 justify-center">
           {menus.map((item) => (
-            <div
+            <NaviButton
               key={item.name}
-              className={`navigation-button ${
-                item.selected ? "selected" : "not-selected"
-              }`}
               role="button"
+              selected={item.selected}
               onClick={() => goRouter(item)}
             >
               {item.name}
-            </div>
+            </NaviButton>
           ))}
         </div>
         <div>
@@ -55,6 +64,7 @@ const Header = ({ onMenuChange }) => {
 };
 
 Header.propTypes = {
-  onMenuChange: PropTypes.func
-}
+  onMenuChange: PropTypes.func,
+};
+
 export default Header;
