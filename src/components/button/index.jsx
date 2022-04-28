@@ -1,12 +1,23 @@
 import React from "react";
-import buttonStyle from "./index.module.scss";
 import { PropTypes } from "prop-types";
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  padding: 0.4rem 1.3rem;
+  margin: 0.3rem 0 0.3rem 0.5rem;
+  color: #373f41;
+  font-size: 14px;
+  border: 1px solid #c3cbcd;
+  background: #fff;
+  border-radius: 0.25rem;
+`;
+console.log(StyledButton)
 
 const Button = ({ name }) => {
   return (
-    <button type="button" className={buttonStyle.button}>
+    <StyledButton type="button">
       {name}
-    </button>
+    </StyledButton>
   );
 };
 

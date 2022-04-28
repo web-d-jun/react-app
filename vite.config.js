@@ -18,13 +18,13 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "component": path.resolve(__dirname, "./src/components"),
-      "~img": path.resolve(__dirname, "./src/assets/img")
+      component: path.resolve(__dirname, "./src/components"),
+      "~img": path.resolve(__dirname, "./src/assets/img"),
     },
   },
   server: {
     watch: {
-      usePolling: true
-    }
-  }
+      usePolling: true,
+    },
+  },
 });
