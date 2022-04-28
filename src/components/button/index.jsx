@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   background: #fff;
   border-radius: 0.25rem;
 `;
-console.log(StyledButton)
+
 
 const Button = ({ name }) => {
   return (
