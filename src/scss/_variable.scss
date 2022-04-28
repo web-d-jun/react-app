@@ -1,5 +1,7 @@
 @import "./_mix.scss";
-
+* {
+  @include default-font-famliy;
+}
 
 .default-font {
   font-size: 2.5rem;
