@@ -5,6 +5,10 @@ import rollupReplace from "@rollup/plugin-replace";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  esbuild: {
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment'
+  },
   plugins: [
     rollupReplace({
       preventAssignment: true,
