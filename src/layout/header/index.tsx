@@ -8,7 +8,8 @@ import styled from "styled-components";
 const NaviButton = styled.div`
   font-size: 1.5rem;
   margin: 0 3rem;
-  color: ${(props: any) => (props.selected ? "#3f7be7" : "#000")};
+  color: ${(props: { selected: boolean }) =>
+    props.selected ? "#3f7be7" : "#000"};
 `;
 
 const Header: React.FC<any> = ({ onMenuChange }) => {
