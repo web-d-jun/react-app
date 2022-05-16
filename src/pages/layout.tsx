@@ -1,13 +1,13 @@
 import * as React from "react";
 import Header from "@/layout/header";
 import { Outlet } from "react-router-dom";
-import { PropTypes } from "prop-types";
 import "./layout.scss";
+import { Props, SubMenuEntity } from "./model/layout";
 
-const SubMenu = ({ subMenu }) => {
+const SubMenu: React.FC<Props> = ({ subMenu }) => {
   return (
     <div className="sub-menu-container flex justify-center items-center">
-      {subMenu.map((item) => (
+      {subMenu.map((item: SubMenuEntity) => (
         <div role="button" className="sub-menu" key={item.name}>
           {item.name}
         </div>
@@ -16,14 +16,14 @@ const SubMenu = ({ subMenu }) => {
   );
 };
 
-SubMenu.propTypes = {
-  subMenu: PropTypes.arrayOf(PropTypes.object),
-};
 function Layout() {
-  const [subMenu, setSubMenu] = React.useState([]);
-  const handleMenuChange = React.useCallback((menu) => {
-    setSubMenu([...menu]);
-  }, [subMenu]);
+  const [subMenu, setSubMenu] = React.useState<SubMenuEntity[]>([]);
+  const handleMenuChange = React.useCallback(
+    (menu: SubMenuEntity[]) => {
+      setSubMenu([...menu]);
+    },
+    [subMenu]
+  );
   return (
     <div>
       <Header onMenuChange={handleMenuChange} />

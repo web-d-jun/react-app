@@ -3,16 +3,15 @@ import Button from "component/button";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import menuItems from "./menu";
-import { PropTypes } from "prop-types";
 import styled from "styled-components";
 
 const NaviButton = styled.div`
   font-size: 1.5rem;
   margin: 0 3rem;
-  color: ${(props) => (props.selected ? "#3f7be7" : "#000")};
+  color: ${(props: any) => (props.selected ? "#3f7be7" : "#000")};
 `;
 
-const Header = ({ onMenuChange }) => {
+const Header: React.FC<any> = ({ onMenuChange }) => {
   const navigate = useNavigate();
   const [menus, setMenus] = useState(menuItems);
   useEffect(() => {
@@ -21,7 +20,7 @@ const Header = ({ onMenuChange }) => {
   const menuRouterInit = () => {
     menus.map((x) => (x.selected = false));
   };
-  const goRouter = (item) => {
+  const goRouter = (item: any) => {
     menuRouterInit();
     const findIndex = menus.findIndex((x) => x.id === item.id);
     menus[findIndex].selected = true;
@@ -61,10 +60,6 @@ const Header = ({ onMenuChange }) => {
       </div>
     </div>
   );
-};
-
-Header.propTypes = {
-  onMenuChange: PropTypes.func,
 };
 
 export default Header;
