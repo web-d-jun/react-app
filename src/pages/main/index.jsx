@@ -24,15 +24,29 @@ const MainContainer = styled.div`
       }
     }
   }
+  .section-2 {
+    background-color: red;
+    height: 500px;
+    color: #fff;
+    font-size: 30px;
+  }
+  .section-3 {
+    background-color: blue;
+    height: 500px;
+    color: #fff;
+    font-size: 30px;
+  }
+  .section-4 {
+    background-color: green;
+    height: 500px;
+    color: #fff;
+    font-size: 30px;
+  }
+  .section-5 {
+    background-color: #718585;
+    height: 300px;
+  }
 `;
-
-// const StyledButton = styled.button`
-
-// `
-
-// const Button = () => {
-//   return <StyledButton>button</StyledButton>
-// }
 
 const MainPage = () => {
   return (
@@ -41,7 +55,8 @@ const MainPage = () => {
         <div className="box-1">
           <div className="box-text">데이터 구매부터 분석까지</div>
           <div className="box-text">
-            All you need is <span className="box-text default-color">AccuRator</span>
+            All you need is{" "}
+            <span className="box-text default-color">AccuRator</span>
           </div>
           <div className="desc">
             원하는 데이터의 중계,융합,유통부터 전문가들을 통한
@@ -56,6 +71,12 @@ const MainPage = () => {
         <div className="box-2">
           <img className="chart-image" src={imageUrl.mainChartImg} alt="" />
         </div>
+      </div>
+      <div className="section-2 flex items-center justify-center">1</div>
+      <div className="section-3 flex items-center justify-center">2</div>
+      <div className="section-4 flex items-center justify-center">3</div>
+      <div className="section-5 flex items-center justify-center">
+        <Button name="contact us" color="red" prima />
       </div>
     </MainContainer>
   );
