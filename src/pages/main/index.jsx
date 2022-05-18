@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import imageUrl from "@/assets/img";
 import Button from "component/button";
 
-// import tw from "tailwind-styled-components";
 import styled from "styled-components";
+
+import { http } from "~lib";
 
 const MainContainer = styled.div`
   margin-top: 4rem;
@@ -46,6 +47,11 @@ const MainContainer = styled.div`
 `;
 
 const MainPage = () => {
+  useEffect(() => {
+    console.log("????1");
+    http.send()
+  });
+
   return (
     <MainContainer className="flex flex-col">
       <div className="section-1 flex">

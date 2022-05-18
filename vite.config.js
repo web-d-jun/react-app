@@ -6,8 +6,8 @@ import rollupReplace from "@rollup/plugin-replace";
 // https://vitejs.dev/config/
 export default defineConfig({
   esbuild: {
-    jsxFactory: 'h',
-    jsxFragment: 'Fragment'
+    jsxFactory: "h",
+    jsxFragment: "Fragment",
   },
   plugins: [
     rollupReplace({
@@ -24,6 +24,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
       component: path.resolve(__dirname, "./src/components"),
       "~img": path.resolve(__dirname, "./src/assets/img"),
+      "~lib": path.resolve(__dirname, "./src/lib"),
     },
   },
   server: {
