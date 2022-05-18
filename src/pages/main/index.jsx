@@ -48,9 +48,13 @@ const MainContainer = styled.div`
 
 const MainPage = () => {
   useEffect(() => {
-    console.log("????1");
-    http.send()
+    init();
   });
+
+  const init = async () => {
+    const r = await http.send();
+    console.log(r);
+  };
 
   return (
     <MainContainer className="flex flex-col">
