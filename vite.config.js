@@ -28,6 +28,15 @@ export default defineConfig({
     },
   },
   server: {
+    cors: false,
+    proxy: {
+      "/api": {
+        target: "http://localhost:5000/",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
     watch: {
       usePolling: true,
     },
