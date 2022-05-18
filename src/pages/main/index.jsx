@@ -76,7 +76,7 @@ const MainPage = () => {
       <div className="section-3 flex items-center justify-center">2</div>
       <div className="section-4 flex items-center justify-center">3</div>
       <div className="section-5 flex items-center justify-center">
-        <Button name="contact us" color="red" prima />
+        <Button name="contact us" primary />
       </div>
     </MainContainer>
   );
