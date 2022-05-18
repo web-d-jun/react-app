@@ -25,25 +25,22 @@ const MainContainer = styled.div`
     }
   }
   .section-2 {
-    background-color: red;
+    border-top: 1px solid #d3d3d3;
     height: 500px;
-    color: #fff;
     font-size: 30px;
   }
   .section-3 {
-    background-color: blue;
+    border-top: 1px solid #d3d3d3;
     height: 500px;
-    color: #fff;
     font-size: 30px;
   }
   .section-4 {
-    background-color: green;
+    border-top: 1px solid #d3d3d3;
     height: 500px;
-    color: #fff;
     font-size: 30px;
   }
   .section-5 {
-    background-color: #718585;
+    border-top: 1px solid #d3d3d3;
     height: 300px;
   }
 `;
@@ -55,8 +52,7 @@ const MainPage = () => {
         <div className="box-1">
           <div className="box-text">데이터 구매부터 분석까지</div>
           <div className="box-text">
-            All you need is{" "}
-            <span className="box-text default-color">AccuRator</span>
+            All you need is <span className="box-text default-color">AccuRator</span>
           </div>
           <div className="desc">
             원하는 데이터의 중계,융합,유통부터 전문가들을 통한
