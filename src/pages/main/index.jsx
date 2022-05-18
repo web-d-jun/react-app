@@ -5,6 +5,7 @@ import Button from "component/button";
 import styled from "styled-components";
 
 import { http } from "~lib";
+import { useQuery } from "react-query";
 
 const MainContainer = styled.div`
   margin-top: 4rem;
@@ -48,13 +49,23 @@ const MainContainer = styled.div`
 
 const MainPage = () => {
   useEffect(() => {
-    init();
+    // init();
   });
 
-  const init = async () => {
+  const { isLoading, error, data } = useQuery("reqData", async () => {
     const r = await http.send();
-    console.log(r);
-  };
+    return r
+    // console.log(r)
+  });
+
+  if (isLoading) return console.log("loading...");
+
+  if (error) return "error" + error.message;
+
+  console.log(data, "data");
+  // console.log(r);
+
+  // const init = async () => {};
 
   return (
     <MainContainer className="flex flex-col">
