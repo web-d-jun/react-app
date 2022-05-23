@@ -4,10 +4,19 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryCache, QueryClient, QueryClientProvider } from "react-query";
 // eslint-disable-next-line no-undef
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  queryCache: new QueryCache({
+    onError: (error, query) => {
+      console.log(error, query, 'global error response......')
+    },
+    onSuccess: data => {
+      console.log(data,'global success response.........')
+    }
+  })
+});
 root.render(
   <React.StrictMode>
     <BrowserRouter>
