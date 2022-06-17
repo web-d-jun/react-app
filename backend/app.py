@@ -8,7 +8,7 @@ from ariadne import (
 )
 from ariadne.constants import PLAYGROUND_HTML
 from api import app
-from api.queries import listPosts_resolver
+from api.queries import listPosts_resolver, getPost_resolver
 
 from apis.helloworld import Helloworld
 from flask import request, jsonify
@@ -18,7 +18,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from dotenv import load_dotenv
 
-#Querying a single post by id
+# Querying a single post by id
 # Writing our first Resolver
 # https://www.apollographql.com/blog/graphql/python/complete-api-guide/
 load_dotenv()
@@ -26,15 +26,14 @@ load_dotenv()
 
 api = Api(app)
 
+# api.add_resource(Helloworld, "/")
+
 query = ObjectType("Query")
 query.set_field("listPosts", listPosts_resolver)
-
-
-api.add_resource(Helloworld, "/")
-
+query.set_field("getPost", getPost_resolver)
 
 type_defs = load_schema_from_path("schema.graphql")
-schema = make_executable_schema(type_defs, snake_case_fallback_resolvers)
+schema = make_executable_schema(type_defs, query, snake_case_fallback_resolvers)
 
 
 @app.route("/graphql", methods=["GET"])
