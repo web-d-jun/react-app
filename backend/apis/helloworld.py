@@ -10,6 +10,6 @@ class Helloworld(Resource):
 
 		return {
 
-			"Hello": "World"
+			"Hello": "World!!"
 
 		}
